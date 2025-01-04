@@ -45,10 +45,10 @@ export const allBookings = async (req, res) => {
   }
 };
 
-export const deleteBooking = async (req, res) => {
+export const deleteBooking = async (req, res) => { 
   try {
-    const { id } = req.params;
-    const index = bookings.findIndex((b) => b.id === parseInt(id));
+  const { id } = req.params;
+  const index = bookings.findIndex((b) => b.id === String(id));
     if (index === -1) {
       return res.json({ error: "Booking not found" });
     }
