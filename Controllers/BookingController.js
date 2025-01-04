@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 const bookings = [];
 
 export const bookingSeat = async (req, res) => {
@@ -14,7 +15,7 @@ export const bookingSeat = async (req, res) => {
     }
 
     const newBooking = {
-      id: bookings.length + 1,
+      id: uuidv4(),
       date,
       time,
       guests,
